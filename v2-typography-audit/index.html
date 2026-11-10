@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font Design v2</title>
+<style>
+	* { box-sizing: border-box; }
+	body { margin: 0; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1c1c1e; background: #f6f6f4; }
+	main { max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
+	h1 { font-size: 28px; margin: 0 0 4px; }
+	h2 { font-size: 20px; margin: 48px 0 4px; }
+	.lead, .hint { color: #5c5c60; margin: 0 0 20px; }
+	form { display: flex; gap: 8px; flex-wrap: wrap; align-items: end; }
+	.field { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 600; flex: 1 1 320px; }
+	input[type=text] { font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #c8c8cc; border-radius: 8px; background: #fff; }
+	input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #2b5fd9; outline-offset: 2px; }
+	button { font: inherit; font-weight: 600; padding: 12px 20px; border: 0; border-radius: 8px; background: #1c1c1e; color: #fff; cursor: pointer; }
+	button:disabled { opacity: .6; cursor: wait; }
+	button.secondary { background: #fff; color: #1c1c1e; border: 1px solid #c8c8cc; font-weight: 500; padding: 8px 14px; }
+	.switch { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; cursor: pointer; margin-top: 14px; }
+	.switch input { appearance: none; flex: none; width: 38px; height: 22px; border-radius: 11px; background: #c8c8cc; position: relative; cursor: pointer; margin: 0; transition: background-color .15s; }
+	.switch input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .15s; }
+	.switch input:checked { background: #1e6b34; }
+	.switch input:checked::after { transform: translateX(16px); }
+	@media (prefers-reduced-motion: reduce) { .switch input, .switch input::after { transition: none; } }
+	.sub { color: #5c5c60; font-size: 13px; font-weight: 400; }
+	.status { margin: 16px 0 0; min-height: 24px; }
+	.error { color: #b3261e; }
+	.notes { padding: 0 0 0 20px; color: #3a3a3e; }
+	.notes li { margin-bottom: 4px; }
+	.summary { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 16px; }
+	.chip { background: #fff; border: 1px solid #e2e2e4; border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+	.faces { display: grid; gap: 14px; }
+	.card { background: #fff; border-radius: 12px; border: 1px solid #e2e2e4; overflow: hidden; }
+	.specimen { display: block; padding: 4px 0; border-bottom: 1px solid #ececee; background: #fff; overflow: hidden; }
+	.specimen img { display: block; max-width: none; height: 64px; }
+	.specimen .fallback { padding: 12px 16px; font-size: 32px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+	.card .body { padding: 14px 16px; display: grid; grid-template-columns: minmax(200px, 1.2fr) 2fr; gap: 6px 24px; }
+	.name { font-size: 20px; font-weight: 700; margin: 0; }
+	.badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 0; }
+	.badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: #eef3fd; color: #1d3f8a; }
+	.badge.system { background: #f3f3f1; color: #3a3a3e; }
+	.badge.icon { background: #fdf3e7; color: #7a4100; }
+	.share { font-size: 28px; font-weight: 700; margin: 10px 0 0; }
+	dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14px; }
+	dt { font-weight: 600; color: #3a3a3e; }
+	dd { margin: 0; overflow-wrap: anywhere; }
+	code { font-size: 13px; background: #f3f3f1; padding: 1px 5px; border-radius: 4px; }
+	.bar { height: 6px; border-radius: 3px; background: #ececee; margin-top: 8px; overflow: hidden; }
+	.bar span { display: block; height: 100%; background: #1c1c1e; }
+	table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e2e4; font-size: 14px; }
+	th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid #ececee; vertical-align: top; }
+	th { background: #fafafa; font-weight: 600; }
+	td a { color: #2b5fd9; overflow-wrap: anywhere; }
+	.muted { color: #8a8a8e; }
+	.table-wrap { overflow-x: auto; }
+	.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+	@media (max-width: 700px) { .card .body { grid-template-columns: 1fr; } }
+	h3 { font-size: 16px; margin: 24px 0 8px; }
+	.field.narrow { flex: 0 1 240px; }
+	select { font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #c8c8cc; border-radius: 8px; background: #fff; }
+	select:focus-visible { outline: 3px solid #2b5fd9; outline-offset: 2px; }
+	.score-card { display: grid; grid-template-columns: 180px 1fr; gap: 20px; background: #fff; border: 1px solid #e2e2e4; border-radius: 12px; padding: 20px; }
+	.score { display: flex; flex-direction: column; gap: 4px; }
+	.score #score-num { font-size: 44px; font-weight: 700; line-height: 1; }
+	.rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
+	.rows li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+	.rows .mark { font-weight: 700; text-align: center; }
+	.rows .pass { color: #1e6b34; } .rows .fail { color: #b3261e; } .rows .na, .rows .hand { color: #8a8a8e; }
+	.sev { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+	.sev.HIGH { background: #fde8e7; color: #8c1d18; } .sev.MEDIUM { background: #fdf3e7; color: #7a4100; } .sev.LOW { background: #eef3fd; color: #1d3f8a; }
+	td .where { font-size: 12px; color: #5c5c60; }
+	pre { background: #1c1c1e; color: #f6f6f4; padding: 16px; border-radius: 10px; overflow: auto; font-size: 13px; max-height: 420px; margin: 0; }
+	.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+	.pair { background: #fff; border: 1px solid #e2e2e4; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+	.pair .preview { padding: 18px; border-bottom: 1px solid #ececee; }
+	.pair .preview .h { font-size: 28px; line-height: 1.15; margin: 0 0 8px; color: #111; }
+	.pair .preview .b { font-size: 16px; line-height: 1.55; margin: 0; color: #333; }
+	.pair .body { padding: 12px 16px; font-size: 14px; display: grid; gap: 4px; }
+	.pair .body .name { font-size: 16px; }
+	@media (max-width: 700px) { .score-card { grid-template-columns: 1fr; } }
+	[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+	<h1>Font Design <small style="font-weight:400;color:#5c5c60">v2</small></h1>
+	<p class="lead">Paste a website address to see every font it uses, a typography score, the fixes to make (with the CSS), and font pairings that suit the property.</p>
+
+	<form id="form">
+		<label class="field">Website address
+			<input id="url" type="text" placeholder="e.g. www.example.com" required autocomplete="url">
+		</label>
+		<label class="field narrow">Property type
+			<select id="property"><option value="none">Not set</option></select>
+		</label>
+		<button id="go" type="submit">Check fonts</button>
+	</form>
+	<label class="switch"><input type="checkbox" role="switch" id="render" checked> Measure as visitors see it <span class="sub">(opens the page in Edge or Chrome; needed for the score and fixes; off: reads the CSS only)</span></label>
+	<p id="status" class="status" role="status" aria-live="polite"></p>
+
+	<section id="results" hidden>
+		<div id="summary" class="summary"></div>
+		<ul id="notes" class="notes"></ul>
+
+		<div class="audit-part">
+			<h2>Font pairing</h2>
+			<p class="hint" id="pairing-verdict"></p>
+			<div id="pairing-faces" class="summary"></div>
+		</div>
+
+		<h2>Typefaces</h2>
+		<p class="hint" id="faces-hint"></p>
+		<div id="faces" class="faces"></div>
+
+		<h2>Suggested font pairings</h2>
+		<p class="hint" id="pairings-hint"></p>
+		<div id="pairings-keep-wrap"><h3>Pairings that keep one of your fonts</h3><div id="pairings-keep" class="pairs"></div></div>
+		<h3 id="pairings-title"></h3>
+		<div id="pairings" class="pairs"></div>
+
+		<div class="audit-part">
+			<h2>Typography score</h2>
+			<p class="hint">web-typography's ten checks. Each one the page passes counts; one needs a person to check.</p>
+			<div class="score-card">
+				<div class="score"><span id="score-num"></span><span class="sub" id="score-band"></span></div>
+				<ul id="score-rows" class="rows"></ul>
+			</div>
+
+			<h2>Fixes</h2>
+			<p class="hint" id="fixes-hint"></p>
+			<div class="table-wrap"><table>
+				<thead><tr><th>Severity</th><th>Fix</th><th>Now</th><th>Change to</th><th>Why</th><th>Where</th></tr></thead>
+				<tbody id="fixes"></tbody>
+			</table></div>
+			<p class="sub" id="not-verified"></p>
+
+			<h2>Recommended CSS</h2>
+			<p class="hint">Keeps the site's fonts and fixes sizes, line height, line length, wrapping and links. Paste into the theme and adjust the selectors to match.</p>
+			<pre id="css"></pre>
+			<div class="actions"><button class="secondary" type="button" id="copy-css">Copy CSS</button></div>
+		</div>
+
+		<div id="scale-wrap">
+			<h2>Type scale</h2>
+			<p class="hint">The most common setting for each heading level and kind of text.</p>
+			<div class="table-wrap"><table>
+				<thead><tr><th>Used for</th><th>Typeface</th><th>Size</th><th>Weight</th><th>Line height</th><th>Letter spacing</th><th>Case</th><th>Variations</th></tr></thead>
+				<tbody id="scale"></tbody>
+			</table></div>
+		</div>
+
+		<h2>Font files</h2>
+		<p class="hint" id="files-hint"></p>
+		<div class="table-wrap"><table>
+			<thead><tr><th>Family</th><th>Weight</th><th>Style</th><th>Status</th><th>Source</th></tr></thead>
+			<tbody id="files"></tbody>
+		</table></div>
+
+		<div class="actions">
+			<button class="secondary" type="button" id="dl-json">Download fonts (JSON)</button>
+		</div>
+	</section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let data = null;
+
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const pct = (share) => (share >= 0.001 ? `${(share * 100).toFixed(share < 0.1 ? 1 : 0)}%` : 'under 0.1%');
+const WEIGHT_NAMES = { 100: 'Thin', 200: 'Extra light', 300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'Semibold', 700: 'Bold', 800: 'Extra bold', 900: 'Black' };
+const weightName = (w) => `${w}${WEIGHT_NAMES[w] ? ` ${WEIGHT_NAMES[w]}` : ''}`;
+const isWeb = (u) => /^https?:\/\//.test(u || '');
+// A font list from the site, reduced to characters a font list needs, so it can't add other CSS to the style.
+const safeStack = (stack) => String(stack || '').replace(/[^\w\s,'"-]/g, '');
+
+function setStatus(text, isError = false) {
+	$('status').textContent = text;
+	$('status').className = 'status' + (isError ? ' error' : '');
+}
+
+function render(r) {
+	const types = (type) => r.typefaces.filter((t) => t.type === type).length;
+	const providers = [...new Set(r.typefaces.filter((t) => t.type !== 'system font').map((t) => t.provider))];
+	$('summary').innerHTML = [
+		`${r.typefaces.length} typeface${r.typefaces.length === 1 ? '' : 's'}`,
+		types('web font') && `${types('web font')} web font${types('web font') === 1 ? '' : 's'}`,
+		types('system font') && `${types('system font')} system font${types('system font') === 1 ? '' : 's'}`,
+		types('icon font') && `${types('icon font')} icon font${types('icon font') === 1 ? '' : 's'}`,
+		...providers,
+		r.method === 'rendered' ? `${r.textElements} text elements measured` : 'Read from the CSS',
+	].filter(Boolean).map((c) => `<span class="chip">${esc(c)}</span>`).join('');
+	$('notes').innerHTML = [r.warning, ...r.notes].filter(Boolean).map((n) => `<li>${esc(n)}</li>`).join('');
+
+	const rendered = r.method === 'rendered';
+	$('faces-hint').textContent = rendered
+		? 'Ranked by how much of the page\'s text each typeface shows. Specimens are drawn by the site\'s own font.'
+		: 'Ranked by how often the site\'s CSS uses each one. Turn on "Measure as visitors see it" for specimens and which fonts really show.';
+	$('faces').innerHTML = r.typefaces.map((t) => `
+		<article class="card">
+			<div class="specimen">${t.specimen
+				? `<img src="${t.specimen}" alt="Specimen of ${esc(t.family)}">`
+				: `<div class="fallback" style="font-family:${esc(safeStack(t.stack))}" title="Shown with this computer's fonts, which may not match the site">Aa Bb Cc 0123 The quick brown fox</div>`}</div>
+			<div class="body">
+				<div>
+					<p class="name">${esc(t.family)}</p>
+					<div class="badges">
+						<span class="badge ${t.type === 'system font' ? 'system' : t.type === 'icon font' ? 'icon' : ''}">${esc(t.type)}</span>
+						<span class="badge system">${esc(t.provider)}</span>
+					</div>
+					<p class="share">${pct(t.share)}</p>
+					<p class="sub">${rendered ? 'of the page\'s text' : 'of font declarations in the CSS'}</p>
+					<div class="bar" aria-hidden="true"><span style="width:${Math.max(1, t.share * 100)}%"></span></div>
+				</div>
+				<dl>
+					${t.roles?.length ? `<dt>Used for</dt><dd>${esc(t.roles.join(', '))}</dd>` : ''}
+					${t.weights?.length ? `<dt>Weights</dt><dd>${esc(t.weights.map(weightName).join(', '))}</dd>` : ''}
+					${t.styles?.some((s) => s !== 'normal') ? `<dt>Styles</dt><dd>${esc(t.styles.join(', '))}</dd>` : ''}
+					${t.sizes ? `<dt>Sizes</dt><dd>${t.sizes.min === t.sizes.max ? `${t.sizes.min}px` : `${t.sizes.min}–${t.sizes.max}px, mostly ${t.sizes.common}px`}</dd>` : ''}
+					<dt>CSS</dt><dd><code>font-family: ${esc(t.stack)};</code></dd>
+					${t.rendersAs ? `<dt>Font file name</dt><dd>${esc(t.rendersAs)}</dd>` : ''}
+					${t.samples?.length ? `<dt>Example text</dt><dd>${t.samples.map((s) => `“${esc(s)}”`).join('<br>')}</dd>` : ''}
+					${t.files?.length ? `<dt>Files</dt><dd>${t.files.slice(0, 3).map((f) => (isWeb(f) ? `<a href="${esc(f)}" target="_blank" rel="noopener">${esc(f.split('/').pop().split('?')[0] || f)}</a>` : esc(f))).join('<br>')}${t.files.length > 3 ? `<br><span class="muted">and ${t.files.length - 3} more</span>` : ''}</dd>` : ''}
+				</dl>
+			</div>
+		</article>`).join('');
+
+	$('scale-wrap').hidden = !r.typeScale.length;
+	$('scale').innerHTML = r.typeScale.map((s) => `<tr>
+		<td>${esc(s.role)}</td><td>${esc(s.family)}</td><td>${s.size}px</td><td>${esc(weightName(s.weight))}</td>
+		<td>${s.lineHeight ? `${s.lineHeight}px <span class="muted">(${(s.lineHeight / s.size).toFixed(2)}×)</span>` : 'normal'}</td>
+		<td>${s.letterSpacing ? `${s.letterSpacing}px` : 'normal'}</td><td>${s.transform === 'none' ? 'as written' : esc(s.transform)}</td>
+		<td>${s.variants > 1 ? `${s.variants} settings across ${s.elements} elements` : `${s.elements} element${s.elements === 1 ? '' : 's'}`}</td></tr>`).join('');
+
+	const loaded = r.fontFiles.filter((f) => f.status === 'loaded').length;
+	$('files-hint').textContent = rendered
+		? `${r.fontFiles.length} declared font${r.fontFiles.length === 1 ? '' : 's'} (family, weight and style), ${loaded} used on this page. Unused ones aren't downloaded.`
+		: `${r.fontFiles.length} font file${r.fontFiles.length === 1 ? '' : 's'} declared in the CSS.`;
+	$('files').innerHTML = r.fontFiles.map((f) => `<tr>
+		<td>${esc(f.family)}${f.icon ? ' <span class="badge icon">icon font</span>' : ''}</td><td>${esc(f.weight)}</td><td>${esc(f.style)}</td>
+		<td>${f.status === 'loaded' ? 'Used' : f.status === 'declared' ? 'Declared' : '<span class="muted">Not used here</span>'}${f.subsets > 1 ? ` <span class="muted">(${f.subsets} language subsets)</span>` : ''}</td>
+		<td>${isWeb(f.url) ? `<a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.provider)}</a>` : esc(f.provider)}</td></tr>`).join('')
+		|| '<tr><td colspan="5" class="muted">No web font files: this page only uses fonts already on the visitor\'s device.</td></tr>';
+	renderAudit(r);
+	renderPairings(r);
+	$('results').hidden = false;
+}
+
+function renderAudit(r) {
+	document.querySelectorAll('.audit-part').forEach((el) => { el.hidden = !r.audit; });
+	if (!r.audit) return;
+	const a = r.audit;
+	$('score-num').textContent = `${a.score.passed}/${a.score.checked}`;
+	$('score-band').textContent = `${a.score.band}. ${a.score.checked} checks measured on this page.`;
+	const mark = (p) => (p === true ? ['pass', '✓', 'Passes'] : p === false ? ['fail', '✗', 'Fails'] : p === 'manual' ? ['hand', '?', 'Check by hand'] : ['na', '–', 'Not measurable here']);
+	$('score-rows').innerHTML = a.score.rows.map((row) => {
+		const [cls, sym, label] = mark(row.pass);
+		return `<li><span class="mark ${cls}" aria-label="${label}">${sym}</span><span><strong>${esc(row.label)}</strong> <span class="sub">${esc(row.detail)}</span></span></li>`;
+	}).join('');
+	const counts = ['HIGH', 'MEDIUM', 'LOW'].map((s) => [s, a.findings.filter((f) => f.severity === s).length]).filter(([, n]) => n);
+	$('fixes-hint').textContent = a.findings.length
+		? `${a.verdict}: ${counts.map(([s, n]) => `${n} ${s.toLowerCase()}`).join(', ')}. High makes text hard to read; medium breaks the type system; low is polish.`
+		: 'No typography fixes found on this page.';
+	$('fixes').innerHTML = a.findings.map((f) => `<tr>
+		<td><span class="sev ${f.severity}">${f.severity}</span></td>
+		<td><strong>${esc(f.rule)}</strong><br><span class="sub">${esc(f.source)}</span></td>
+		<td>${esc(f.before)}</td><td><code>${esc(f.after)}</code></td><td>${esc(f.why)}</td>
+		<td><span class="where">${f.where.map((w) => `<code>${esc(w)}</code>`).join('<br>')}${f.count > f.where.length ? `<br>and ${f.count - f.where.length} more` : ''}</span></td></tr>`).join('')
+		|| '<tr><td colspan="6" class="muted">Nothing to fix.</td></tr>';
+	$('not-verified').textContent = `Not checked: ${a.notVerified.join(' ')}`;
+	$('pairing-verdict').textContent = a.pairing.verdict;
+	$('pairing-faces').innerHTML = a.pairing.faces.map((f) => `<span class="chip">${esc(f.family)}: ${esc(f.category)}</span>`).join('');
+	$('css').textContent = r.css;
+}
+
+// Live previews load each suggested pair from Google Fonts (all of them are Google Fonts).
+const loadedFonts = new Set();
+function loadGoogleFonts(p) {
+	const families = [[p.heading, p.headingWeights], [p.body, p.bodyWeights]].filter(([f], i, arr) => arr.findIndex(([g]) => g === f) === i);
+	const key = families.map(([f]) => f).join('|');
+	if (loadedFonts.has(key)) return;
+	loadedFonts.add(key);
+	const q = families.map(([f, w]) => `family=${encodeURIComponent(f).replace(/%20/g, '+')}:wght@${[...new Set([400, 700, ...(w || [])])].filter((x) => x >= 100 && x <= 900).sort((x, y) => x - y).join(';')}`).join('&');
+	document.head.append(Object.assign(document.createElement('link'), { rel: 'stylesheet', href: `https://fonts.googleapis.com/css2?${q}&display=swap` }));
+}
+
+function pairCard(p) {
+	loadGoogleFonts(p);
+	const hw = Math.max(...(p.headingWeights || [600]).filter((w) => w >= 500 && w <= 700), 600);
+	const css = `font-family: "${p.heading}", ${/mono/i.test(p.heading) ? 'monospace' : 'serif'};  /* headings */\nfont-family: "${p.body}", sans-serif;  /* body */`;
+	return `<article class="pair">
+		<div class="preview">
+			<p class="h" style="font-family:'${esc(safeStack(p.heading))}', serif; font-weight:${hw};${p.tracking ? ` letter-spacing:${p.tracking}em;` : ''}">Stay by the water</p>
+			<p class="b" style="font-family:'${esc(safeStack(p.body))}', sans-serif;">Wake to the harbour, walk to the beach, and come back to a quiet room with a view. Rates from $189 a night.</p>
+		</div>
+		<div class="body">
+			<strong class="name">${esc(p.name)}</strong>
+			<span>${esc(p.heading)} + ${esc(p.body)}${p.keeps ? ` <span class="badge">keeps ${esc(p.keeps)}</span>` : ''}</span>
+			<span class="sub">${esc(p.bestFor)}</span>
+			<span class="sub">Mood: ${esc(p.moods.slice(0, 5).join(', '))} · from ${esc(p.source)}</span>
+			<code title="${esc(css)}">${esc(p.heading)} / ${esc(p.body)}</code>
+			<a href="https://fonts.google.com/?query=${encodeURIComponent(p.heading)}" target="_blank" rel="noopener">See on Google Fonts</a>
+		</div>
+	</article>`;
+}
+
+function renderPairings(r) {
+	const property = $('property').selectedOptions[0]?.textContent || 'Not set';
+	$('pairings-hint').textContent = $('property').value === 'none'
+		? 'Pick a property type above for pairings that suit it. Below are pairings used by hotels, restaurants and travel brands.'
+		: `Pairings whose mood suits a ${property.toLowerCase()}, previewed in the real fonts.`;
+	$('pairings-keep-wrap').hidden = !r.pairings.keeps.length;
+	$('pairings-keep').innerHTML = r.pairings.keeps.map(pairCard).join('');
+	$('pairings-title').textContent = $('property').value === 'none' ? 'Hospitality pairings' : `For a ${property.toLowerCase()}`;
+	$('pairings').innerHTML = r.pairings.forProperty.map(pairCard).join('') || '<p class="muted">No pairings matched.</p>';
+}
+
+async function load() {
+	const res = await fetch(`/api/fonts?url=${encodeURIComponent($('url').value.trim())}&render=${$('render').checked ? 1 : 0}&property=${$('property').value}`);
+	const json = await res.json();
+	if (!res.ok) throw new Error(json.error);
+	data = json;
+	render(json);
+}
+
+$('form').addEventListener('submit', async (e) => {
+	e.preventDefault();
+	$('go').disabled = true;
+	setStatus($('render').checked ? 'Opening the page and measuring its fonts… this can take up to a minute.' : 'Reading the CSS…');
+	try {
+		await load();
+		setStatus(`Done: ${data.url}`);
+	} catch (err) {
+		setStatus(err.message || 'Something went wrong. Is the Font Design window still open?', true);
+	} finally {
+		$('go').disabled = false;
+	}
+});
+
+// Changing the property type only re-ranks the pairings; the site read is reused.
+$('property').addEventListener('change', async () => {
+	if (!data) return;
+	try { await load(); setStatus(`Pairings updated for ${$('property').selectedOptions[0].textContent}.`); } catch (err) { setStatus(err.message, true); }
+});
+$('copy-css').addEventListener('click', async () => { await navigator.clipboard.writeText(data.css); setStatus('Copied the CSS.'); });
+
+(async () => {
+	const { propertyTypes } = await fetch('/api/config').then((res) => res.json());
+	$('property').innerHTML = Object.entries(propertyTypes).map(([k, label]) => `<option value="${k}">${esc(label)}</option>`).join('');
+})();
+
+$('dl-json').addEventListener('click', () => {
+	const a = document.createElement('a');
+	a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, '\t')], { type: 'application/json' }));
+	a.download = `fonts-${new URL(data.url).hostname}.json`;
+	a.click();
+	URL.revokeObjectURL(a.href);
+});
+</script>
+</body>
+</html>

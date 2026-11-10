@@ -1,0 +1,2677 @@
+{
+	"sources": [
+		"UI UX Pro Max (nextlevelbuilder/ui-ux-pro-max-skill, MIT)",
+		"taste-skill (Leonxlnx/taste-skill, MIT)"
+	],
+	"pairings": [
+		{
+			"name": "Classic Elegant",
+			"heading": "Playfair Display",
+			"body": "Inter",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"elegant",
+				"luxury",
+				"sophisticated",
+				"timeless",
+				"premium",
+				"editorial"
+			],
+			"bestFor": "Luxury brands, fashion, spa, beauty, editorial, magazines, high-end e-commerce",
+			"note": "High contrast between elegant heading and clean body. Perfect for luxury/premium.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Modern Professional",
+			"heading": "Poppins",
+			"body": "Open Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"modern",
+				"professional",
+				"clean",
+				"corporate",
+				"friendly",
+				"approachable"
+			],
+			"bestFor": "SaaS, corporate sites, business apps, startups, professional services",
+			"note": "Geometric Poppins for headings, humanist Open Sans for readability.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Tech Startup",
+			"heading": "Space Grotesk",
+			"body": "DM Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"tech",
+				"startup",
+				"modern",
+				"innovative",
+				"bold",
+				"futuristic"
+			],
+			"bestFor": "Tech companies, startups, SaaS, developer tools, AI products",
+			"note": "Space Grotesk has unique character, DM Sans is highly readable.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Editorial Classic",
+			"heading": "Cormorant Garamond",
+			"body": "Libre Baskerville",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"editorial",
+				"classic",
+				"literary",
+				"traditional",
+				"refined",
+				"bookish"
+			],
+			"bestFor": "Publishing, blogs, news sites, literary magazines, book covers",
+			"note": "All-serif pairing for traditional editorial feel.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Minimal Swiss",
+			"heading": "Inter",
+			"body": "Inter",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"minimal",
+				"clean",
+				"swiss",
+				"functional",
+				"neutral",
+				"professional"
+			],
+			"bestFor": "Dashboards, admin panels, documentation, enterprise apps, design systems",
+			"note": "Single font family with weight variations. Ultimate simplicity.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Playful Creative",
+			"heading": "Fredoka",
+			"body": "Nunito",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"playful",
+				"friendly",
+				"fun",
+				"creative",
+				"warm",
+				"approachable"
+			],
+			"bestFor": "Children's apps, educational, gaming, creative tools, entertainment",
+			"note": "Rounded, friendly fonts perfect for playful UIs.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Bold Statement",
+			"heading": "Bebas Neue",
+			"body": "Source Sans 3",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"bold",
+				"impactful",
+				"strong",
+				"dramatic",
+				"modern",
+				"headlines"
+			],
+			"bestFor": "Marketing sites, portfolios, agencies, event pages, sports",
+			"note": "Bebas Neue for large headlines only. All-caps display font.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Wellness Calm",
+			"heading": "Lora",
+			"body": "Raleway",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"calm",
+				"wellness",
+				"health",
+				"relaxing",
+				"natural",
+				"organic"
+			],
+			"bestFor": "Health apps, wellness, spa, meditation, yoga, organic brands",
+			"note": "Lora's organic curves with Raleway's elegant simplicity.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Developer Mono",
+			"heading": "JetBrains Mono",
+			"body": "IBM Plex Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"code",
+				"developer",
+				"technical",
+				"precise",
+				"functional",
+				"hacker"
+			],
+			"bestFor": "Developer tools, documentation, code editors, tech blogs, CLI apps",
+			"note": "JetBrains for code, IBM Plex for UI. Developer-focused.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Retro Vintage",
+			"heading": "Abril Fatface",
+			"body": "Merriweather",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				700
+			],
+			"moods": [
+				"retro",
+				"vintage",
+				"nostalgic",
+				"dramatic",
+				"decorative",
+				"bold"
+			],
+			"bestFor": "Vintage brands, breweries, restaurants, creative portfolios, posters",
+			"note": "Abril Fatface for hero headlines only. High-impact vintage feel.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Geometric Modern",
+			"heading": "Outfit",
+			"body": "Work Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"geometric",
+				"modern",
+				"clean",
+				"balanced",
+				"contemporary",
+				"versatile"
+			],
+			"bestFor": "General purpose, portfolios, agencies, modern brands, landing pages",
+			"note": "Both geometric but Outfit more distinctive for headings.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Luxury Serif",
+			"heading": "Cormorant",
+			"body": "Montserrat",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"luxury",
+				"high-end",
+				"fashion",
+				"elegant",
+				"refined",
+				"premium"
+			],
+			"bestFor": "Fashion brands, luxury e-commerce, jewelry, high-end services",
+			"note": "Cormorant's elegance with Montserrat's geometric precision.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Friendly SaaS",
+			"heading": "Plus Jakarta Sans",
+			"body": "Plus Jakarta Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"friendly",
+				"modern",
+				"saas",
+				"clean",
+				"approachable",
+				"professional"
+			],
+			"bestFor": "SaaS products, web apps, dashboards, B2B, productivity tools",
+			"note": "Single versatile font. Modern alternative to Inter.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "News Editorial",
+			"heading": "Newsreader",
+			"body": "Roboto",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"news",
+				"editorial",
+				"journalism",
+				"trustworthy",
+				"readable",
+				"informative"
+			],
+			"bestFor": "News sites, blogs, magazines, journalism, content-heavy sites",
+			"note": "Newsreader designed for long-form reading. Roboto for UI.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Handwritten Charm",
+			"heading": "Caveat",
+			"body": "Quicksand",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"handwritten",
+				"personal",
+				"friendly",
+				"casual",
+				"warm",
+				"charming"
+			],
+			"bestFor": "Personal blogs, invitations, creative portfolios, lifestyle brands",
+			"note": "Use Caveat sparingly for accents. Quicksand for body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Corporate Trust",
+			"heading": "Lexend",
+			"body": "Source Sans 3",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"corporate",
+				"trustworthy",
+				"accessible",
+				"readable",
+				"professional",
+				"clean"
+			],
+			"bestFor": "Enterprise, government, healthcare, finance, accessibility-focused",
+			"note": "Lexend designed for readability. Excellent accessibility.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Brutalist Raw",
+			"heading": "Space Mono",
+			"body": "Space Mono",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"brutalist",
+				"raw",
+				"technical",
+				"monospace",
+				"minimal",
+				"stark"
+			],
+			"bestFor": "Brutalist designs, developer portfolios, experimental, tech art",
+			"note": "All-mono for raw brutalist aesthetic. Limited weights.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Fashion Forward",
+			"heading": "Syne",
+			"body": "Manrope",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"fashion",
+				"avant-garde",
+				"creative",
+				"bold",
+				"artistic",
+				"edgy"
+			],
+			"bestFor": "Fashion brands, creative agencies, art galleries, design studios",
+			"note": "Syne's unique character for headlines. Manrope for readability.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Soft Rounded",
+			"heading": "Varela Round",
+			"body": "Nunito Sans",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"soft",
+				"rounded",
+				"friendly",
+				"approachable",
+				"warm",
+				"gentle"
+			],
+			"bestFor": "Children's products, pet apps, friendly brands, wellness, soft UI",
+			"note": "Both rounded and friendly. Perfect for soft UI designs.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Premium Sans (DM Sans)",
+			"heading": "DM Sans",
+			"body": "DM Sans",
+			"headingWeights": [
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"premium",
+				"modern",
+				"clean",
+				"sophisticated",
+				"versatile",
+				"balanced"
+			],
+			"bestFor": "Premium brands, modern agencies, SaaS, portfolios, startups",
+			"note": "Single importable Google family with balanced weights for premium sans layouts.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Vietnamese Friendly",
+			"heading": "Be Vietnam Pro",
+			"body": "Noto Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"vietnamese",
+				"international",
+				"readable",
+				"clean",
+				"multilingual",
+				"accessible"
+			],
+			"bestFor": "Vietnamese sites, multilingual apps, international products",
+			"note": "Be Vietnam Pro excellent Vietnamese support. Noto as fallback.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Japanese Elegant",
+			"heading": "Noto Serif JP",
+			"body": "Noto Sans JP",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"japanese",
+				"elegant",
+				"traditional",
+				"modern",
+				"multilingual",
+				"readable"
+			],
+			"bestFor": "Japanese sites, Japanese restaurants, cultural sites, anime/manga",
+			"note": "Noto fonts excellent Japanese support. Traditional + modern feel.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Korean Modern",
+			"heading": "Noto Sans KR",
+			"body": "Noto Sans KR",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"korean",
+				"modern",
+				"clean",
+				"professional",
+				"multilingual",
+				"readable"
+			],
+			"bestFor": "Korean sites, K-beauty, K-pop, Korean businesses, multilingual",
+			"note": "Clean Korean typography. Single font with weight variations.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Chinese Traditional",
+			"heading": "Noto Serif TC",
+			"body": "Noto Sans TC",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"chinese",
+				"traditional",
+				"elegant",
+				"cultural",
+				"multilingual",
+				"readable"
+			],
+			"bestFor": "Traditional Chinese sites, cultural content, Taiwan/Hong Kong markets",
+			"note": "Traditional Chinese character support. Elegant pairing.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Chinese Simplified",
+			"heading": "Noto Sans SC",
+			"body": "Noto Sans SC",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"chinese",
+				"simplified",
+				"modern",
+				"professional",
+				"multilingual",
+				"readable"
+			],
+			"bestFor": "Simplified Chinese sites, mainland China market, business apps",
+			"note": "Simplified Chinese support. Clean modern look.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Arabic Elegant",
+			"heading": "Noto Naskh Arabic",
+			"body": "Noto Sans Arabic",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"arabic",
+				"elegant",
+				"traditional",
+				"cultural",
+				"rtl",
+				"readable"
+			],
+			"bestFor": "Arabic sites, Middle East market, Islamic content, bilingual sites",
+			"note": "RTL support. Naskh for traditional, Sans for modern Arabic.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Thai Modern",
+			"heading": "Noto Sans Thai",
+			"body": "Noto Sans Thai",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"thai",
+				"modern",
+				"readable",
+				"clean",
+				"multilingual",
+				"accessible"
+			],
+			"bestFor": "Thai sites, Southeast Asia, tourism, Thai restaurants",
+			"note": "Clean Thai typography. Excellent readability.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Hebrew Modern",
+			"heading": "Noto Sans Hebrew",
+			"body": "Noto Sans Hebrew",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"hebrew",
+				"modern",
+				"rtl",
+				"clean",
+				"professional",
+				"readable"
+			],
+			"bestFor": "Hebrew sites, Israeli market, Jewish content, bilingual sites",
+			"note": "RTL support. Clean modern Hebrew typography.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Legal Professional",
+			"heading": "EB Garamond",
+			"body": "Lato",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				700
+			],
+			"moods": [
+				"legal",
+				"professional",
+				"traditional",
+				"trustworthy",
+				"formal",
+				"authoritative"
+			],
+			"bestFor": "Law firms, legal services, contracts, formal documents, government",
+			"note": "EB Garamond for authority. Lato for clean body text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Medical Clean",
+			"heading": "Figtree",
+			"body": "Noto Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"medical",
+				"clean",
+				"accessible",
+				"professional",
+				"healthcare",
+				"trustworthy"
+			],
+			"bestFor": "Healthcare, medical clinics, pharma, health apps, accessibility",
+			"note": "Clean, accessible fonts for medical contexts.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Financial Trust",
+			"heading": "IBM Plex Sans",
+			"body": "IBM Plex Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"financial",
+				"trustworthy",
+				"professional",
+				"corporate",
+				"banking",
+				"serious"
+			],
+			"bestFor": "Banks, finance, insurance, investment, fintech, enterprise",
+			"note": "IBM Plex conveys trust and professionalism. Excellent for data.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Real Estate Luxury",
+			"heading": "Cinzel",
+			"body": "Josefin Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"real estate",
+				"luxury",
+				"elegant",
+				"sophisticated",
+				"property",
+				"premium"
+			],
+			"bestFor": "Real estate, luxury properties, architecture, interior design",
+			"note": "Cinzel's elegance for headlines. Josefin for modern body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Restaurant Menu",
+			"heading": "Playfair Display SC",
+			"body": "Karla",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"restaurant",
+				"menu",
+				"culinary",
+				"elegant",
+				"foodie",
+				"hospitality"
+			],
+			"bestFor": "Restaurants, cafes, food blogs, culinary, hospitality",
+			"note": "Small caps Playfair for menu headers. Karla for descriptions.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Art Deco",
+			"heading": "Poiret One",
+			"body": "Didact Gothic",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"art deco",
+				"vintage",
+				"1920s",
+				"elegant",
+				"decorative",
+				"gatsby"
+			],
+			"bestFor": "Vintage events, art deco themes, luxury hotels, classic cocktails",
+			"note": "Poiret One for art deco headlines only. Didact for body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Magazine Style",
+			"heading": "Libre Bodoni",
+			"body": "Public Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"magazine",
+				"editorial",
+				"publishing",
+				"refined",
+				"journalism",
+				"print"
+			],
+			"bestFor": "Magazines, online publications, editorial content, journalism",
+			"note": "Bodoni's editorial elegance. Public Sans for clean UI.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Crypto/Web3",
+			"heading": "Orbitron",
+			"body": "Exo 2",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"crypto",
+				"web3",
+				"futuristic",
+				"tech",
+				"blockchain",
+				"digital"
+			],
+			"bestFor": "Crypto platforms, NFT, blockchain, web3, futuristic tech",
+			"note": "Orbitron for futuristic headers. Exo 2 for readable body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Gaming Bold",
+			"heading": "Russo One",
+			"body": "Chakra Petch",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"gaming",
+				"bold",
+				"action",
+				"esports",
+				"competitive",
+				"energetic"
+			],
+			"bestFor": "Gaming, esports, action games, competitive sports, entertainment",
+			"note": "Russo One for impact. Chakra Petch for techy body text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Indie/Craft",
+			"heading": "Amatic SC",
+			"body": "Cabin",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"indie",
+				"craft",
+				"handmade",
+				"artisan",
+				"organic",
+				"creative"
+			],
+			"bestFor": "Craft brands, indie products, artisan, handmade, organic products",
+			"note": "Amatic for handwritten feel. Cabin for readable body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Startup Bold (Outfit + Rubik)",
+			"heading": "Outfit",
+			"body": "Rubik",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"startup",
+				"bold",
+				"modern",
+				"innovative",
+				"confident",
+				"dynamic"
+			],
+			"bestFor": "Startups, pitch decks, product launches, bold brands",
+			"note": "Importable Google pairing: Outfit for display headings and Rubik for body text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "E-commerce Clean",
+			"heading": "Rubik",
+			"body": "Nunito Sans",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"ecommerce",
+				"clean",
+				"shopping",
+				"product",
+				"retail",
+				"conversion"
+			],
+			"bestFor": "E-commerce, online stores, product pages, retail, shopping",
+			"note": "Clean readable fonts perfect for product descriptions.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Academic/Research",
+			"heading": "Crimson Pro",
+			"body": "Atkinson Hyperlegible",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"academic",
+				"research",
+				"scholarly",
+				"accessible",
+				"readable",
+				"educational"
+			],
+			"bestFor": "Universities, research papers, academic journals, educational",
+			"note": "Crimson for scholarly headlines. Atkinson for accessibility.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Dashboard Data",
+			"heading": "Fira Code",
+			"body": "Fira Sans",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"dashboard",
+				"data",
+				"analytics",
+				"code",
+				"technical",
+				"precise"
+			],
+			"bestFor": "Dashboards, analytics, data visualization, admin panels",
+			"note": "Fira family cohesion. Code for data, Sans for labels.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Music/Entertainment",
+			"heading": "Righteous",
+			"body": "Poppins",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"music",
+				"entertainment",
+				"fun",
+				"energetic",
+				"bold",
+				"performance"
+			],
+			"bestFor": "Music platforms, entertainment, events, festivals, performers",
+			"note": "Righteous for bold entertainment headers. Poppins for body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Minimalist Portfolio",
+			"heading": "Archivo",
+			"body": "Space Grotesk",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"minimal",
+				"portfolio",
+				"designer",
+				"creative",
+				"clean",
+				"artistic"
+			],
+			"bestFor": "Design portfolios, creative professionals, minimalist brands",
+			"note": "Space Grotesk for distinctive headers. Archivo for clean body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Kids/Education",
+			"heading": "Baloo 2",
+			"body": "Comic Neue",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				700
+			],
+			"moods": [
+				"kids",
+				"education",
+				"playful",
+				"friendly",
+				"colorful",
+				"learning"
+			],
+			"bestFor": "Children's apps, educational games, kid-friendly content",
+			"note": "Fun, playful fonts for children. Comic Neue is readable comic style.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Wedding/Romance",
+			"heading": "Great Vibes",
+			"body": "Cormorant Infant",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"wedding",
+				"romance",
+				"elegant",
+				"script",
+				"invitation",
+				"feminine"
+			],
+			"bestFor": "Wedding sites, invitations, romantic brands, bridal",
+			"note": "Great Vibes for elegant accents. Cormorant for readable text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Science/Tech",
+			"heading": "Exo",
+			"body": "Roboto Mono",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"science",
+				"technology",
+				"research",
+				"data",
+				"futuristic",
+				"precise"
+			],
+			"bestFor": "Science, research, tech documentation, data-heavy sites",
+			"note": "Exo for modern tech feel. Roboto Mono for code/data.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Accessibility First",
+			"heading": "Atkinson Hyperlegible",
+			"body": "Atkinson Hyperlegible",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"accessible",
+				"readable",
+				"inclusive",
+				"wcag",
+				"dyslexia-friendly",
+				"clear"
+			],
+			"bestFor": "Accessibility-critical sites, government, healthcare, inclusive design",
+			"note": "Designed for maximum legibility. Excellent for accessibility.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Sports/Fitness",
+			"heading": "Barlow Condensed",
+			"body": "Barlow",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"sports",
+				"fitness",
+				"athletic",
+				"energetic",
+				"condensed",
+				"action"
+			],
+			"bestFor": "Sports, fitness, gyms, athletic brands, competition",
+			"note": "Condensed for impact headlines. Regular Barlow for body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Luxury Minimalist",
+			"heading": "Bodoni Moda",
+			"body": "Jost",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"luxury",
+				"minimalist",
+				"high-end",
+				"sophisticated",
+				"refined",
+				"premium"
+			],
+			"bestFor": "Luxury minimalist brands, high-end fashion, premium products",
+			"note": "Bodoni's high contrast elegance. Jost for geometric body.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Tech/HUD Mono",
+			"heading": "Share Tech Mono",
+			"body": "Fira Code",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"tech",
+				"futuristic",
+				"hud",
+				"sci-fi",
+				"data",
+				"monospaced",
+				"precise"
+			],
+			"bestFor": "Sci-fi interfaces, developer tools, cybersecurity, dashboards",
+			"note": "Share Tech Mono has that classic sci-fi look.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Pixel Retro",
+			"heading": "Press Start 2P",
+			"body": "VT323",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"pixel",
+				"retro",
+				"gaming",
+				"8-bit",
+				"nostalgic",
+				"arcade"
+			],
+			"bestFor": "Pixel art games, retro websites, creative portfolios",
+			"note": "Press Start 2P is very wide/large. VT323 is better for body text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Neubrutalist Bold",
+			"heading": "Lexend Mega",
+			"body": "Public Sans",
+			"headingWeights": [
+				900
+			],
+			"bodyWeights": [
+				900
+			],
+			"moods": [
+				"bold",
+				"neubrutalist",
+				"loud",
+				"strong",
+				"geometric",
+				"quirky"
+			],
+			"bestFor": "Neubrutalist designs, Gen Z brands, bold marketing",
+			"note": "Lexend Mega has distinct character and variable weight.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Academic/Archival",
+			"heading": "EB Garamond",
+			"body": "Crimson Text",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700,
+				800
+			],
+			"bodyWeights": [
+				400,
+				600,
+				700
+			],
+			"moods": [
+				"academic",
+				"old-school",
+				"university",
+				"research",
+				"serious",
+				"traditional"
+			],
+			"bestFor": "University sites, archives, research papers, history",
+			"note": "Classic academic aesthetic. Very legible.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Kinetic Motion",
+			"heading": "Syncopate",
+			"body": "Space Mono",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"kinetic",
+				"motion",
+				"futuristic",
+				"speed",
+				"wide",
+				"tech"
+			],
+			"bestFor": "Music festivals, automotive, high-energy brands",
+			"note": "Syncopate's wide stance works well with motion effects.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Gen Z Brutal",
+			"heading": "Anton",
+			"body": "Epilogue",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"brutal",
+				"loud",
+				"shouty",
+				"meme",
+				"internet",
+				"bold"
+			],
+			"bestFor": "Gen Z marketing, streetwear, viral campaigns",
+			"note": "Anton is impactful and condensed. Good for stickers/badges.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Bauhaus Geometric",
+			"heading": "Outfit",
+			"body": "Outfit",
+			"headingWeights": [
+				400,
+				500,
+				700,
+				900
+			],
+			"bodyWeights": [
+				400,
+				500,
+				700,
+				900
+			],
+			"moods": [
+				"bauhaus",
+				"geometric",
+				"constructivist",
+				"bold",
+				"uppercase",
+				"architectural",
+				"mechanical",
+				"poster",
+				"tactile"
+			],
+			"bestFor": "Bauhaus mobile apps, bold editorial mobile, design-forward branding apps, art/culture platforms",
+			"note": "Single-family system: Outfit 900 uppercase tracking-tighter for heroes; Outfit 700 uppercase for buttons/nav; Outfit 500 for body. Scale aggressively: text-4xl–text-5xl headlines on mobile.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Minimalist Monochrome Editorial",
+			"heading": "Playfair Display",
+			"body": "Source Serif 4",
+			"headingWeights": [
+				400,
+				700,
+				900
+			],
+			"bodyWeights": [
+				300,
+				400,
+				600
+			],
+			"moods": [
+				"monochrome",
+				"editorial",
+				"austere",
+				"typographic",
+				"pocket manifesto",
+				"luxury",
+				"high contrast",
+				"brutalist mobile"
+			],
+			"bestFor": "Luxury fashion mobile apps, editorial publications, digital exhibitions, portfolio apps, high-contrast e-reader aesthetics",
+			"note": "Triple stack: Playfair Display 900 tracking-tighter leading-[0.9] for heroes (text-5xl–text-6xl breaks words graphically). Source Serif 4 300–600 for body legibility. JetBrains Mono 400–500 uppercase tracking-widest for tags/dates/labels. NO UI sans-serif — 100% serif/mono.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "SaaS Mobile Boutique (Calistoga + Inter)",
+			"heading": "Calistoga",
+			"body": "Inter",
+			"headingWeights": [],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"saas",
+				"boutique",
+				"electric",
+				"warm",
+				"editorial",
+				"bold",
+				"premium",
+				"fintech",
+				"business",
+				"dual font",
+				"human warmth"
+			],
+			"bestFor": "B2B SaaS mobile, fintech apps, analytics dashboards, marketing tools, operations platforms",
+			"note": "Tri-stack: Calistoga (adds human warmth) for heroes 36–42pt leading-1.1; Inter 400–600 for body/UI 16–18pt; JetBrains Mono 12pt uppercase tracking-[1.5] for data labels and section badges. Scale: Hero 36–42pt, Section H2 28–32pt, Body 16–18pt, Label 12pt. Avoid italic Calistoga except editorial callouts.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Terminal CLI Monospace",
+			"heading": "JetBrains Mono",
+			"body": "JetBrains Mono",
+			"headingWeights": [
+				400,
+				500
+			],
+			"bodyWeights": [
+				400,
+				500
+			],
+			"moods": [
+				"terminal",
+				"cli",
+				"hacker",
+				"monospace",
+				"matrix",
+				"developer",
+				"retro-future",
+				"command line",
+				"precision",
+				"oled"
+			],
+			"bestFor": "Developer tools, Web3/blockchain apps, hacker aesthetic, sci-fi games, ARG, security tools, geek-culture portfolios",
+			"note": "Single monospace system: use ONLY JetBrains Mono (or SpaceMono-Regular as system fallback). Strict sizes: 12pt / 14pt / 16pt only — no in-between. Weight: 400 normal (bold ruins mono character). Line height: 1.2x font size for information density. Letter spacing: normal (monospaced auto-spacing). All UI labels uppercase. ASCII borders and text-based progress bars.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Kinetic Brutalism (Space Grotesk)",
+			"heading": "Space Grotesk",
+			"body": "Space Grotesk",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"kinetic",
+				"brutalist",
+				"aggressive",
+				"uppercase",
+				"oversized",
+				"display",
+				"motion",
+				"street",
+				"bold",
+				"high-energy",
+				"zine"
+			],
+			"bestFor": "Music/culture apps, sports platforms, brand flagship mobile, performance dashboards, underground product drops",
+			"note": "Dominant single-family system: Space Grotesk 700 for display, with 400–600 available for body and supporting hierarchy. Scale: Hero 60–120pt (windowWidth/375*size), Section 40–50pt, Card titles 28–32pt, Body 18–20pt, Labels 12pt. ALL display/buttons/nav: UPPERCASE, letterSpacing -1 (large) / +2 (labels), lineHeight 0.9–1.1x. Use a sans-serif system fallback. Font scale must use PixelRatio helper for responsive sizing.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Material You MD3 (Roboto System)",
+			"heading": "Roboto",
+			"body": "Roboto",
+			"headingWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"material design 3",
+				"md3",
+				"android",
+				"google",
+				"tonal",
+				"friendly",
+				"rounded",
+				"accessible",
+				"adaptive"
+			],
+			"bestFor": "Android apps, cross-platform tools, productivity software, data-heavy B2B dashboards, enterprise mobile",
+			"note": "MD3 type scale: Display Large 56px/400/64px. Headline Large 32px/500/40px. Title Large 22px/500/28px. Body Large 16px/400/24px. Label Medium 12px/500/16px. Buttons and Labels: letterSpacing 0.1px. Use system Roboto on Android; load from Google Fonts for iOS parity. Never use custom weights beyond 300–700.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Bold Typography Mobile (Inter Poster)",
+			"heading": "Inter",
+			"body": "Playfair Display",
+			"headingWeights": [
+				400,
+				500,
+				600,
+				700,
+				800
+			],
+			"bodyWeights": [],
+			"moods": [
+				"bold typography",
+				"editorial",
+				"poster",
+				"near-black",
+				"vermillion",
+				"luxury",
+				"type-as-hero",
+				"manifesto",
+				"high-contrast"
+			],
+			"bestFor": "Creative brand flagships, reading platforms, event apps, flash pages, luxury mobile experiences",
+			"note": "Tri-stack: Inter 600–800 for UI and display type (letterSpacing -1.5px heroes, -0.5px subheads). Playfair Display Italic only for pull quotes. JetBrains Mono for labels and stats. Suggested scale: 12px labels, 16px body, 22px subhead, 32px section, 40px H2, 56px H1, 72px hero statement. Use lineHeight 1.1 for headlines and 1.6 for body. Keep text links visibly identifiable; do not replace button semantics with styled underlines.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Academia Mobile (Cormorant + Crimson + Cinzel)",
+			"heading": "Cormorant Garamond",
+			"body": "Crimson Pro",
+			"headingWeights": [
+				300,
+				500,
+				700
+			],
+			"bodyWeights": [
+				300,
+				400,
+				600
+			],
+			"moods": [
+				"academia",
+				"library",
+				"mahogany",
+				"parchment",
+				"brass",
+				"scholarly",
+				"prestige",
+				"antique",
+				"victorian",
+				"leather"
+			],
+			"bestFor": "Knowledge management apps, scholarly reading tools, personal brand portfolios, RPG games, cultural community platforms",
+			"note": "Triple-stack: Cormorant Garamond Medium for all headings (32–40px tight leading). Crimson Pro Regular for body reading text (16–18px, lineHeight 24–26px). Cinzel SemiBold for ALL-CAPS labels, overlines, section prefixes (10–12px, letterSpacing 2–3px). Drop caps: first letter 60px Cinzel in Brass #C9A962. Section prefix: VOLUME I/II/III in Cinzel 10px. NO sans-serif anywhere.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Cyberpunk Mobile (Orbitron + JetBrains Mono)",
+			"heading": "Orbitron",
+			"body": "JetBrains Mono",
+			"headingWeights": [
+				700,
+				900
+			],
+			"bodyWeights": [
+				400,
+				500
+			],
+			"moods": [
+				"cyberpunk",
+				"neon",
+				"glitch",
+				"hud",
+				"sci-fi",
+				"dark",
+				"matrix green",
+				"magenta",
+				"chamfered",
+				"tactical"
+			],
+			"bestFor": "Gaming companion apps, fintech/crypto, data visualization, dark brand apps, cyberpunk narrative games",
+			"note": "Dual-stack: Orbitron 700–900 for H1 (42px uppercase letterSpacing 4, fontWeight 900). JetBrains Mono 400–500 for all body/data text (14px letterSpacing 1). Labels: 10px uppercase opacity 0.7. Heading scale aggressive: H1 42px, H2 28px, Section 20px. Body 14px monospace only. NO mixed sans-serif. Fallback: monospace system font. Orbitron requires loading — use NativeWind or useFonts hook.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Web3 Bitcoin DeFi (Space Grotesk + Inter + Mono)",
+			"heading": "Space Grotesk",
+			"body": "Inter",
+			"headingWeights": [
+				500,
+				600,
+				700
+			],
+			"bodyWeights": [
+				400,
+				500,
+				600,
+				700
+			],
+			"moods": [
+				"web3",
+				"bitcoin",
+				"defi",
+				"digital gold",
+				"fintech",
+				"crypto",
+				"trustless",
+				"luminescent",
+				"precision",
+				"dark"
+			],
+			"bestFor": "DeFi protocols and wallets, NFT platforms, metaverse social apps, high-tech brand landing pages",
+			"note": "Tri-stack: Space Grotesk 600–700 for headings (geometric, technical character). Inter 400–600 for all body and UI text (high legibility). JetBrains Mono Medium for all data/stats/prices/hashes (technical accuracy). Buttons: Inter Bold uppercase letterSpacing 1.5. Balance figures use MaskedView gradient text (orange→gold). Heading scale: H1 36–42px, H2 24–28px, body 16–18px, mono labels 12–14px.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Claymorphism Mobile (Nunito + DM Sans)",
+			"heading": "Nunito",
+			"body": "DM Sans",
+			"headingWeights": [
+				700,
+				800,
+				900
+			],
+			"bodyWeights": [
+				400,
+				500,
+				700
+			],
+			"moods": [
+				"claymorphism",
+				"clay",
+				"rounded",
+				"playful",
+				"candy",
+				"bubbly",
+				"soft",
+				"3d",
+				"children",
+				"education",
+				"tactile",
+				"spring",
+				"nunito",
+				"dm sans"
+			],
+			"bestFor": "Children education apps, teen social, brand mascot apps, creative tools, fintech gamification",
+			"note": "Dual-stack: Nunito Black (900) or ExtraBold (800) for ALL headings — rounded terminals are mandatory. DM Sans Medium (500) for body text — clean and geometric. Scale: Hero 48px lineHeight 52 letterSpacing -1. Section Title 32px lineHeight 38. Card Title 22px lineHeight 28. Body 16px lineHeight 24. Never use Nunito for body text (too decorative at small sizes). Never use weights below 700 for any heading. includeFontPadding: false on all Nunito Text components for vertical centering in rounded buttons.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Sketch Hand-Drawn Mobile (Kalam + Patrick Hand)",
+			"heading": "Kalam",
+			"body": "Patrick Hand",
+			"headingWeights": [
+				400,
+				700
+			],
+			"bodyWeights": [
+				400,
+				700
+			],
+			"moods": [
+				"sketch",
+				"hand-drawn",
+				"handwriting",
+				"human",
+				"imperfect",
+				"organic",
+				"paper",
+				"kalam",
+				"patrick hand",
+				"education",
+				"journal",
+				"creative"
+			],
+			"bestFor": "Journaling apps, prototype tools, children's picturebook apps, creative platforms, gamified puzzle apps",
+			"note": "Dual handwritten stack: Kalam Bold (700) for all headings — high visual weight, felt-tip marker aesthetic, conveys intentional messiness. Patrick Hand Regular for all body text — highly legible at mobile sizes while remaining distinctly human. Scale: Heading 28–36px with lineHeight adjusted for descenders. Body 16–18px lineHeight 1.5. Labels 14px. Vary font sizes slightly between adjacent elements for spontaneous feel. Avoid alignment: 'center' for long body text — left-aligned reads more naturally. Both fonts require useFonts loading in Expo. Never use these fonts for financial figures or legal text.",
+			"source": "UI UX Pro Max"
+		},
+		{
+			"name": "Geist",
+			"heading": "Geist",
+			"body": "Geist",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"precise",
+				"technical",
+				"calm",
+				"neo-grotesk"
+			],
+			"bestFor": "developer tools, AI, infrastructure, fintech: exact, plain and fast",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Host Grotesk",
+			"heading": "Host Grotesk",
+			"body": "Host Grotesk",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"precise",
+				"neo-grotesk"
+			],
+			"bestFor": "software, studios and agencies that want a quiet, exact page",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Instrument Sans",
+			"heading": "Instrument Sans",
+			"body": "Instrument Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"precise",
+				"friendly",
+				"calm",
+				"neo-grotesk"
+			],
+			"bestFor": "design and productivity software, studios, modern agencies",
+			"tracking": -0.028,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Mona Sans",
+			"heading": "Mona Sans",
+			"body": "Mona Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"technical",
+				"bold",
+				"precise",
+				"neo-grotesk"
+			],
+			"bestFor": "hardware, platforms, games studios: a little wide, firm and modern",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Hanken Grotesk",
+			"heading": "Hanken Grotesk",
+			"body": "Hanken Grotesk",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"trusted",
+				"neo-grotesk"
+			],
+			"bestFor": "clinics, law, advice, agencies: friendly and trusted without a trace of tech",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Schibsted Grotesk",
+			"heading": "Schibsted Grotesk",
+			"body": "Schibsted Grotesk",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"bold",
+				"trusted",
+				"neo-grotesk"
+			],
+			"bestFor": "media, agencies, services that want a sturdy editorial voice",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Onest",
+			"heading": "Onest",
+			"body": "Onest",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"trusted",
+				"neo-grotesk"
+			],
+			"bestFor": "software and services that want an even, open and readable page",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Funnel Display + Funnel Sans",
+			"heading": "Funnel Display",
+			"body": "Funnel Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"bold",
+				"neo-grotesk"
+			],
+			"bestFor": "consumer apps and products with a friendly, bright voice",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Manrope",
+			"heading": "Manrope",
+			"body": "Manrope",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"precise",
+				"friendly",
+				"geometric"
+			],
+			"bestFor": "fintech, data and AI products: clean geometric forms, open numbers",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Sora + Figtree",
+			"heading": "Sora",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"technical",
+				"bold",
+				"geometric"
+			],
+			"bestFor": "games, web3-free fintech, hardware: a wide, geometric face with a clear text partner",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Archivo",
+			"heading": "Archivo",
+			"body": "Archivo",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"bold",
+				"technical",
+				"wide"
+			],
+			"bestFor": "hardware, vehicles, equipment and games: a broad, firm face",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Anybody + Onest",
+			"heading": "Anybody",
+			"body": "Onest",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"playful",
+				"bold",
+				"wide"
+			],
+			"bestFor": "game studios and esports: a wide, energetic headline over a calm text face",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Bricolage Grotesque + Figtree",
+			"heading": "Bricolage Grotesque",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"playful",
+				"warm",
+				"grotesk-soft"
+			],
+			"bestFor": "consumer products and brands with character, studios, kitchens that sell online",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Red Hat Display + Red Hat Text",
+			"heading": "Red Hat Display",
+			"body": "Red Hat Text",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"trusted",
+				"friendly",
+				"neo-grotesk"
+			],
+			"bestFor": "trades, finance advice, health and schools: steady and approachable",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Gabarito + Figtree",
+			"heading": "Gabarito",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"playful",
+				"geometric"
+			],
+			"bestFor": "consumer apps and casual games: round and friendly",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Chivo",
+			"heading": "Chivo",
+			"body": "Chivo",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"technical",
+				"calm",
+				"neo-grotesk"
+			],
+			"bestFor": "developer and data tools: grotesk with a matching mono",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Epilogue",
+			"heading": "Epilogue",
+			"body": "Epilogue",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"precise",
+				"bold",
+				"neo-grotesk"
+			],
+			"bestFor": "platforms, tools and games studios: a sharp, slightly condensed grotesk",
+			"tracking": -0.035,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Familjen Grotesk",
+			"heading": "Familjen Grotesk",
+			"body": "Familjen Grotesk",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"technical",
+				"calm",
+				"neo-grotesk"
+			],
+			"bestFor": "software with an editorial edge, creative tools",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Urbanist",
+			"heading": "Urbanist",
+			"body": "Urbanist",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"precise",
+				"geometric"
+			],
+			"bestFor": "apps, fintech and consumer software: soft geometric forms",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Reddit Sans",
+			"heading": "Reddit Sans",
+			"body": "Reddit Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"precise",
+				"neo-grotesk"
+			],
+			"bestFor": "platforms, communities and AI tools: open and even",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "SUSE",
+			"heading": "SUSE",
+			"body": "SUSE",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"technical",
+				"precise",
+				"neo-grotesk"
+			],
+			"bestFor": "infrastructure, security and developer platforms: firm, slightly technical",
+			"tracking": -0.03,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Albert Sans",
+			"heading": "Albert Sans",
+			"body": "Albert Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"refined",
+				"neo-grotesk"
+			],
+			"bestFor": "shops, studios and small services: one quiet sans in two weights",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Figtree",
+			"heading": "Figtree",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"calm",
+				"geometric"
+			],
+			"bestFor": "friendly shops, studios and services",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Work Sans",
+			"heading": "Work Sans",
+			"body": "Work Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"trusted",
+				"neo-grotesk"
+			],
+			"bestFor": "bike shops, studios, trades: sturdy and plain",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Rethink Sans",
+			"heading": "Rethink Sans",
+			"body": "Rethink Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"calm",
+				"friendly",
+				"neo-grotesk"
+			],
+			"bestFor": "florists, studios, small shops: soft and readable",
+			"tracking": -0.025,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Instrument Serif + Instrument Sans",
+			"heading": "Instrument Serif",
+			"body": "Instrument Sans",
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"refined",
+				"calm",
+				"classic",
+				"serif"
+			],
+			"bestFor": "brands, studios and firms that want a refined, editorial voice",
+			"tracking": -0.012,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Fraunces + Figtree",
+			"heading": "Fraunces",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"warm",
+				"friendly",
+				"classic",
+				"serif"
+			],
+			"bestFor": "bakeries, roasters, food and homeware brands: a soft, warm serif",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Newsreader + Hanken Grotesk",
+			"heading": "Newsreader",
+			"body": "Hanken Grotesk",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"trusted",
+				"refined",
+				"calm",
+				"serif"
+			],
+			"bestFor": "bookshops, guesthouses, advisers, schools: a calm text serif",
+			"tracking": -0.018,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Source Serif 4 + Libre Franklin",
+			"heading": "Source Serif 4",
+			"body": "Libre Franklin",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"trusted",
+				"classic",
+				"serif"
+			],
+			"bestFor": "law, finance, health, schools, bookshops: sober and readable",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		},
+		{
+			"name": "EB Garamond + Jost",
+			"heading": "EB Garamond",
+			"body": "Jost",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"classic",
+				"refined",
+				"calm",
+				"serif"
+			],
+			"bestFor": "wine rooms, bookshops, old guesthouses, patisseries: classical and quiet",
+			"tracking": -0.012,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Literata + Figtree",
+			"heading": "Literata",
+			"body": "Figtree",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"trusted",
+				"warm",
+				"calm",
+				"serif"
+			],
+			"bestFor": "bookshops, libraries, cafes with a reading corner: made for reading",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Lora + Nunito Sans",
+			"heading": "Lora",
+			"body": "Nunito Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"warm",
+				"classic",
+				"serif"
+			],
+			"bestFor": "roasters, bakeries and delis: warm, brushed serif forms",
+			"tracking": -0.015,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Besley + Albert Sans",
+			"heading": "Besley",
+			"body": "Albert Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"warm",
+				"bold",
+				"classic",
+				"serif"
+			],
+			"bestFor": "cafes, bakeries and bars: a warm, slightly slab serif",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Vollkorn + Work Sans",
+			"heading": "Vollkorn",
+			"body": "Work Sans",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"warm",
+				"classic",
+				"serif"
+			],
+			"bestFor": "bakeries, delis and bookshops: dark, sturdy, bread-like serif",
+			"tracking": -0.015,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Zilla Slab + Rethink Sans",
+			"heading": "Zilla Slab",
+			"body": "Rethink Sans",
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"warm",
+				"trusted",
+				"bold",
+				"slab"
+			],
+			"bestFor": "workshops, bike shops, outfitters and trades: a friendly slab",
+			"tracking": -0.018,
+			"source": "taste-skill"
+		},
+		{
+			"name": "Nunito",
+			"heading": "Nunito",
+			"body": "Nunito",
+			"headingWeights": [
+				400,
+				600
+			],
+			"bodyWeights": [
+				400,
+				600
+			],
+			"moods": [
+				"friendly",
+				"warm",
+				"soft"
+			],
+			"bestFor": "cafes, bakeries, kids and wellbeing: rounded and easy",
+			"tracking": -0.02,
+			"source": "taste-skill"
+		}
+	]
+}

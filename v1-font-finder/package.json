@@ -1,0 +1,13 @@
+{
+  "name": "font-design",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Finds every font and typeface on a website: which fonts actually render, where they come from, what they're used for, and the type scale.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.58.2"
+  }
+}
