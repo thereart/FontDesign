@@ -262,15 +262,27 @@ export function suggestPairings(result, property = 'none') {
 	const scored = PAIRINGS.filter((p) => !/\b(JP|KR|SC|TC|HK|Arabic|Hebrew|Thai|Devanagari|Bengali|Tamil)\b/.test(`${p.heading} ${p.body}`)).map((p) => {
 		const words = `${p.moods.join(' ')} ${p.bestFor}`.toLowerCase();
 		const hits = moods.filter((m) => words.includes(m));
-		const score = hits.length * 2 + (HOSPITALITY.test(p.bestFor) ? 1.5 : 0) + (p.heading !== p.body ? 0.5 : 0);
+		// Hand-curated pairings first, then ones a type designer built to match (superfamily, same designer), then mood matches.
+		const basis = { curated: 1, superfamily: 0.8, 'same designer': 0.5 }[p.basis ?? 'curated'] ?? 0;
+		const score = hits.length * 2 + (HOSPITALITY.test(p.bestFor) ? 1.5 : 0) + (p.heading !== p.body ? 0.5 : 0) + basis;
 		return { ...p, score, matched: hits };
 	});
+	const key = (p) => `${p.heading}|${p.body}`;
 	const keeps = scored.filter((p) => families.includes(p.heading.toLowerCase()) || families.includes(p.body.toLowerCase()))
-		.sort((a, b) => b.score - a.score).slice(0, 3)
+		.sort((a, b) => b.score - a.score).slice(0, 6)
 		.map((p) => ({ ...p, keeps: families.includes(p.heading.toLowerCase()) ? p.heading : p.body }));
-	const kept = new Set(keeps.map((p) => p.name));
-	const forProperty = scored.filter((p) => !kept.has(p.name) && (moods.length ? p.matched.length : HOSPITALITY.test(p.bestFor)))
-		.sort((a, b) => b.score - a.score).slice(0, 6);
+	const kept = new Set(keeps.map(key));
+	// Up to 60, so the page can filter by font source and show more; with no property type, all pairings rank by score.
+	const ranked = scored.filter((p) => !kept.has(key(p)) && (!moods.length || p.matched.length)).sort((a, b) => b.score - a.score);
+	// Variety: each font leads at most two pairings before repeats are allowed, so one popular body face can't fill the list.
+	const uses = {};
+	const first = [], later = [];
+	for (const p of ranked) {
+		const fresh = (uses[p.heading] ?? 0) < 2 && (uses[p.body] ?? 0) < 2;
+		(fresh ? first : later).push(p);
+		if (fresh) { uses[p.heading] = (uses[p.heading] ?? 0) + 1; uses[p.body] = (uses[p.body] ?? 0) + 1; }
+	}
+	const forProperty = [...first, ...later].slice(0, 60);
 	const strip = ({ score, ...p }) => p;
 	return { keeps: keeps.map(strip), forProperty: forProperty.map(strip) };
 }

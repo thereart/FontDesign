@@ -1,5 +1,6 @@
 // Run: node test.mjs
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { parseFamilies, isIconFont, isGeneric, providerOf, googleFamilies, extractFontCss, summarise } from './font-utils.mjs';
 
 // Font lists.
@@ -169,9 +170,58 @@ assert.match(tight.notes.join(' '), /line height is 1\.15×/);
 	const pr = suggestPairings(good, 'luxury');
 	assert.ok(pr.keeps.length && pr.keeps.every((p) => ['lora', 'inter'].includes(p.keeps.toLowerCase())));
 	assert.ok(pr.forProperty.length >= 4 && pr.forProperty.every((p) => p.matched.length));
-	assert.ok(!pr.forProperty.some((p) => pr.keeps.some((k) => k.name === p.name)), 'no duplicates between the two lists');
+	const pairKey = (p) => `${p.heading}|${p.body}`;
+	assert.ok(!pr.forProperty.some((p) => pr.keeps.some((k) => pairKey(k) === pairKey(p))), 'no duplicates between the two lists');
+	assert.equal(new Set(pr.forProperty.map(pairKey)).size, pr.forProperty.length);
 	assert.ok(![...pr.keeps, ...pr.forProperty].some((p) => /\bJP\b|\bKR\b/.test(`${p.heading} ${p.body}`)));
-	assert.ok(suggestPairings(good, 'none').forProperty.every((p) => /hotel|hospitality|resort|travel|guesthouse|spa|restaurant|cafe|wine|wellness|bar|holiday|accommodation/i.test(p.bestFor)));
+	assert.ok(pr.keeps.length <= 6 && pr.forProperty.length <= 60);
+	// With no property type, everything ranks by score: hospitality pairings first, and many more to choose from.
+	const none = suggestPairings(good, 'none').forProperty;
+	assert.equal(none.length, 60);
+	assert.ok(none.slice(0, 6).every((p) => /hotel|hospitality|resort|travel|guesthouse|spa|restaurant|cafe|wine|wellness|bar|holiday|accommodation/i.test(p.bestFor)));
+	// Variety: in the first dozen shown, no font appears more than twice.
+	for (const type of ['none', 'luxury', 'boutique', 'heritage']) {
+		const top = suggestPairings(good, type).forProperty.slice(0, 12);
+		const counts = {};
+		for (const p of top) for (const f of new Set([p.heading, p.body])) counts[f] = (counts[f] ?? 0) + 1;
+		assert.ok(Object.values(counts).every((n) => n <= 2), `${type}: ${JSON.stringify(Object.entries(counts).filter(([, n]) => n > 2))}`);
+	}
+	// Every property type offers fonts from beyond Google.
+	for (const type of ['luxury', 'boutique', 'resort', 'waterfront', 'business', 'eco', 'heritage']) {
+		const list = suggestPairings(good, type).forProperty;
+		assert.ok(list.some((p) => p.fonts.heading.source !== 'google' || p.fonts.body.source !== 'google'), `${type} has non-Google fonts`);
+	}
+}
+
+// Multi-source pairing data.
+{
+	const { pairings } = JSON.parse(readFileSync(new URL('./data/pairings.json', import.meta.url), 'utf8'));
+	const { categoryOf } = await import('./audit.mjs');
+	assert.ok(pairings.length >= 300, `${pairings.length} pairings`);
+	const nonGoogle = pairings.filter((p) => p.fonts.heading.source !== 'google' || p.fonts.body.source !== 'google');
+	assert.ok(nonGoogle.length >= 100, `${nonGoogle.length} use non-Google fonts`);
+	for (const s of ['fontshare', 'fontsource', 'system']) assert.ok(pairings.some((p) => p.fonts.heading.source === s || p.fonts.body.source === s), s);
+	assert.equal(new Set(pairings.map((p) => `${p.heading}|${p.body}`)).size, pairings.length, 'no duplicate pairings');
+	for (const p of pairings) {
+		for (const f of [p.fonts.heading, p.fonts.body]) {
+			// Everything the page needs to load and link each font.
+			if (f.source === 'fontshare') assert.ok(f.slug, `${f.family} slug`);
+			if (f.source === 'fontsource') assert.ok(f.id, `${f.family} id`);
+			if (f.source === 'system') assert.ok(/(serif|sans-serif)$/.test(f.stack), `${f.family} stack`);
+			assert.ok(f.licence && f.weights?.length, `${f.family} licence and weights`);
+		}
+		if (p.basis !== 'curated') {
+			// Generated pairs follow the pairing rules: clear contrast, and a body face made for paragraphs.
+			assert.notEqual(p.fonts.heading.category, p.fonts.body.category, `${p.heading} + ${p.body} contrast`);
+			assert.equal(p.fonts.body.category, 'sans-serif', `${p.body} body`);
+			assert.ok(!/Stencil|Display|Mono|\bSC\b|Condensed/.test(p.body), `${p.body} is a text face`);
+			assert.ok(p.fonts.body.weights.includes(400) && p.fonts.body.weights.some((w) => w >= 600), `${p.body} has regular and bold`);
+			assert.ok(['superfamily', 'same designer', 'mood match'].includes(p.basis) && p.bestFor, p.name);
+		}
+	}
+	// Sites using Fontshare or Fontsource fonts are recognised too.
+	assert.equal(categoryOf('Satoshi'), 'sans-serif');
+	assert.equal(categoryOf('Pitagon Serif'), 'serif');
 }
 
 console.log('ok');

@@ -80,6 +80,12 @@
 	.pair .body { padding: 12px 16px; font-size: 14px; display: grid; gap: 4px; }
 	.pair .body .name { font-size: 16px; }
 	@media (max-width: 700px) { .score-card { grid-template-columns: 1fr; } }
+	.source-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 12px; }
+	#source-buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+	.chip-btn { font: inherit; font-size: 14px; font-weight: 500; padding: 5px 12px; border-radius: 999px; border: 1px solid #c8c8cc; background: #fff; color: #1c1c1e; cursor: pointer; }
+	.chip-btn[aria-pressed="true"] { background: #1c1c1e; border-color: #1c1c1e; color: #fff; }
+	.chip-btn:disabled { opacity: .45; cursor: not-allowed; }
+	.chip-btn:focus-visible { outline: 3px solid #2b5fd9; outline-offset: 2px; }
 	[hidden] { display: none !important; }
 </style>
 </head>
@@ -118,7 +124,12 @@
 		<p class="hint" id="pairings-hint"></p>
 		<div id="pairings-keep-wrap"><h3>Pairings that keep one of your fonts</h3><div id="pairings-keep" class="pairs"></div></div>
 		<h3 id="pairings-title"></h3>
+		<div class="source-filter" role="group" aria-label="Font source">
+			<span class="sub">Fonts from:</span>
+			<span id="source-buttons"></span>
+		</div>
 		<div id="pairings" class="pairs"></div>
+		<div class="actions"><button class="secondary" type="button" id="more-pairings" hidden>Show more pairings</button></div>
 
 		<div class="audit-part">
 			<h2>Typography score</h2>
@@ -275,33 +286,59 @@ function renderAudit(r) {
 	$('css').textContent = r.css;
 }
 
-// Live previews load each suggested pair from Google Fonts (all of them are Google Fonts).
+// Each font loads from its own source: Google Fonts, Fontshare, Fontsource (jsDelivr), or nothing for system stacks.
 const loadedFonts = new Set();
-function loadGoogleFonts(p) {
-	const families = [[p.heading, p.headingWeights], [p.body, p.bodyWeights]].filter(([f], i, arr) => arr.findIndex(([g]) => g === f) === i);
-	const key = families.map(([f]) => f).join('|');
-	if (loadedFonts.has(key)) return;
-	loadedFonts.add(key);
-	const q = families.map(([f, w]) => `family=${encodeURIComponent(f).replace(/%20/g, '+')}:wght@${[...new Set([400, 700, ...(w || [])])].filter((x) => x >= 100 && x <= 900).sort((x, y) => x - y).join(';')}`).join('&');
-	document.head.append(Object.assign(document.createElement('link'), { rel: 'stylesheet', href: `https://fonts.googleapis.com/css2?${q}&display=swap` }));
+const SOURCE_LABEL = { google: 'Google Fonts', fontshare: 'Fontshare', fontsource: 'Fontsource (open source)', system: 'System fonts (no download)' };
+function fontLink(f) {
+	// Only the regular and bold the preview shows (or the nearest weights the font has), not every file.
+	const has = f.weights?.length ? f.weights : [400, 700];
+	const nearest = (target) => has.reduce((best, x) => (Math.abs(x - target) < Math.abs(best - target) ? x : best));
+	const w = [...new Set([nearest(400), nearest(700)])].sort((a, b) => a - b);
+	if (f.source === 'fontshare') return [`https://api.fontshare.com/v2/css?f[]=${f.slug}@${w.join(',')}&display=swap`];
+	if (f.source === 'fontsource') return w.map((x) => `https://cdn.jsdelivr.net/npm/@fontsource/${f.id}/${x}.css`);
+	if (f.source === 'system') return [];
+	return [`https://fonts.googleapis.com/css2?family=${encodeURIComponent(f.family).replace(/%20/g, '+')}:wght@${(w.length ? w : [400]).join(';')}&display=swap`];
 }
+function loadGoogleFonts(p) {
+	const fonts = p.fonts ? [p.fonts.heading, p.fonts.body] : [{ family: p.heading, source: 'google', weights: p.headingWeights }, { family: p.body, source: 'google', weights: p.bodyWeights }];
+	for (const href of fonts.flatMap(fontLink)) {
+		if (loadedFonts.has(href)) continue;
+		loadedFonts.add(href);
+		document.head.append(Object.assign(document.createElement('link'), { rel: 'stylesheet', href }));
+	}
+}
+// Where to see a font and get it.
+function fontPage(f) {
+	if (f.source === 'fontshare') return `https://www.fontshare.com/fonts/${f.slug}`;
+	if (f.source === 'fontsource') return `https://fontsource.org/fonts/${f.id}`;
+	if (f.source === 'system') return 'https://modernfontstacks.com/';
+	return `https://fonts.google.com/specimen/${encodeURIComponent(f.family).replace(/%20/g, '+')}`;
+}
+// The CSS family to preview: system stacks use their whole stack.
+const previewFamily = (p, role) => (p.fonts?.[role]?.source === 'system' ? p.fonts[role].stack : `'${safeStack(p[role])}'`);
 
 function pairCard(p) {
 	loadGoogleFonts(p);
-	const hw = Math.max(...(p.headingWeights || [600]).filter((w) => w >= 500 && w <= 700), 600);
+	// A semibold or bold the font really has; single-weight fonts keep their own weight, so nothing is faked.
+	const hws = p.headingWeights?.length ? p.headingWeights : [600];
+	const strong = hws.filter((w) => w >= 500 && w <= 700);
+	const hw = strong.length ? Math.max(...strong) : Math.max(...hws.filter((w) => w <= 500), Math.min(...hws));
 	const css = `font-family: "${p.heading}", ${/mono/i.test(p.heading) ? 'monospace' : 'serif'};  /* headings */\nfont-family: "${p.body}", sans-serif;  /* body */`;
 	return `<article class="pair">
 		<div class="preview">
-			<p class="h" style="font-family:'${esc(safeStack(p.heading))}', serif; font-weight:${hw};${p.tracking ? ` letter-spacing:${p.tracking}em;` : ''}">Stay by the water</p>
-			<p class="b" style="font-family:'${esc(safeStack(p.body))}', sans-serif;">Wake to the harbour, walk to the beach, and come back to a quiet room with a view. Rates from $189 a night.</p>
+			<p class="h" style="font-family:${esc(previewFamily(p, 'heading'))}, serif; font-weight:${hw};${p.tracking ? ` letter-spacing:${p.tracking}em;` : ''}">Stay by the water</p>
+			<p class="b" style="font-family:${esc(previewFamily(p, 'body'))}, sans-serif;">Wake to the harbour, walk to the beach, and come back to a quiet room with a view. Rates from $189 a night.</p>
 		</div>
 		<div class="body">
 			<strong class="name">${esc(p.name)}</strong>
 			<span>${esc(p.heading)} + ${esc(p.body)}${p.keeps ? ` <span class="badge">keeps ${esc(p.keeps)}</span>` : ''}</span>
 			<span class="sub">${esc(p.bestFor)}</span>
-			<span class="sub">Mood: ${esc(p.moods.slice(0, 5).join(', '))} · from ${esc(p.source)}</span>
+			<span class="sub">Mood: ${esc(p.moods.slice(0, 5).join(', '))} · ${esc([...new Set([p.fonts?.heading?.source, p.fonts?.body?.source].filter(Boolean).map((s) => SOURCE_LABEL[s]))].join(' + ') || 'Google Fonts')} · ${esc(p.source)}</span>
 			<code title="${esc(css)}">${esc(p.heading)} / ${esc(p.body)}</code>
-			<a href="https://fonts.google.com/?query=${encodeURIComponent(p.heading)}" target="_blank" rel="noopener">See on Google Fonts</a>
+			${[p.fonts?.heading ?? { family: p.heading, source: 'google' }, p.fonts?.body ?? { family: p.body, source: 'google' }]
+				.filter((f, i, arr) => arr.findIndex((g) => g.family === f.family) === i)
+				.map((f) => `<a href="${esc(fontPage(f))}" target="_blank" rel="noopener">${esc(f.family.replace(' (system)', ''))} on ${esc(SOURCE_LABEL[f.source].replace(' (open source)', '').replace(' (no download)', ''))}</a>`).join('')}
+			${p.fonts ? `<span class="sub">Licence: ${esc([...new Set([p.fonts.heading.licence, p.fonts.body.licence])].join('; '))}</span>` : ''}
 		</div>
 	</article>`;
 }
@@ -309,13 +346,42 @@ function pairCard(p) {
 function renderPairings(r) {
 	const property = $('property').selectedOptions[0]?.textContent || 'Not set';
 	$('pairings-hint').textContent = $('property').value === 'none'
-		? 'Pick a property type above for pairings that suit it. Below are pairings used by hotels, restaurants and travel brands.'
-		: `Pairings whose mood suits a ${property.toLowerCase()}, previewed in the real fonts.`;
+		? 'Pick a property type above for pairings that suit it. Hand-picked pairings come first, then ones built as a set, then mood matches. Filter by where the fonts come from.'
+		: `Pairings whose mood suits a ${property.toLowerCase()}, previewed in the real fonts. Filter by where the fonts come from.`;
 	$('pairings-keep-wrap').hidden = !r.pairings.keeps.length;
 	$('pairings-keep').innerHTML = r.pairings.keeps.map(pairCard).join('');
-	$('pairings-title').textContent = $('property').value === 'none' ? 'Hospitality pairings' : `For a ${property.toLowerCase()}`;
-	$('pairings').innerHTML = r.pairings.forProperty.map(pairCard).join('') || '<p class="muted">No pairings matched.</p>';
+	$('pairings-title').textContent = $('property').value === 'none' ? 'All pairings, best first' : `For a ${property.toLowerCase()}`;
+	shownPairs = PAGE;
+	showPairs();
 }
+
+// Source filter and "Show more": a pairing counts for a source if either of its fonts comes from there.
+const PAGE = 12;
+let pairSource = 'all', shownPairs = PAGE;
+const sourcesOf = (p) => [p.fonts?.heading?.source ?? 'google', p.fonts?.body?.source ?? 'google'];
+function showPairs() {
+	const all = data.pairings.forProperty;
+	const count = (s) => (s === 'all' ? all.length : all.filter((p) => sourcesOf(p).includes(s)).length);
+	$('source-buttons').innerHTML = ['all', 'google', 'fontshare', 'fontsource', 'system'].map((s) => `<button type="button" class="chip-btn" data-source="${s}" aria-pressed="${s === pairSource}" ${count(s) ? '' : 'disabled'}>${s === 'all' ? 'All' : SOURCE_LABEL[s]} (${count(s)})</button>`).join('');
+	const list = pairSource === 'all' ? all : all.filter((p) => sourcesOf(p).includes(pairSource));
+	$('pairings').innerHTML = list.slice(0, shownPairs).map(pairCard).join('') || '<p class="muted">No pairings matched.</p>';
+	$('more-pairings').hidden = list.length <= shownPairs;
+	$('more-pairings').textContent = `Show more pairings (${list.length - shownPairs} more)`;
+}
+$('source-buttons').addEventListener('click', (e) => {
+	const b = e.target.closest('button[data-source]');
+	if (!b) return;
+	pairSource = b.dataset.source;
+	shownPairs = PAGE;
+	showPairs();
+	$('source-buttons').querySelector(`[data-source="${pairSource}"]`).focus();
+});
+$('more-pairings').addEventListener('click', () => {
+	const first = shownPairs;
+	shownPairs += PAGE;
+	showPairs();
+	$('pairings').children[first]?.querySelector('a')?.focus();
+});
 
 async function load() {
 	const res = await fetch(`/api/fonts?url=${encodeURIComponent($('url').value.trim())}&render=${$('render').checked ? 1 : 0}&property=${$('property').value}`);
